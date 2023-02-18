@@ -3,9 +3,9 @@ import Image from "next/image"
 function Footer() {
   return (
   <>
-  <footer className='bg-[#2B2B39] h-[250px] text-white mt-[50px] flex '>
+  <footer className='bg-[#2B2B39] md:h-[250px] text-white mt-[50px] flex py-3 '>
 
-    <div className='grid grid-cols-5 gap-[80px] w-[80%] m-auto'>
+    <div className='grid grid-cols-2 md:grid-cols-5 gap-[80px] w-[80%] m-auto'>
         <div>
             <h2 className='font-bold mb-[20px]'>Home</h2>
             <ul className='flex flex-col gap-[15px] text-sm'>
@@ -56,7 +56,7 @@ function Footer() {
             <ul className='flex flex-col gap-[15px] text-sm'>
               <p className='text-sm'>Subscribe to be the first to know latest updates</p>
 
-              <div className='border-2 border-white rounded-2xl flex w-[235px]'>
+              <div className='border-2 border-white rounded-2xl flex w-[230px]'>
                 <input type="email" placeholder='Email Address' className='text-white p-2 bg-transparent w-[150px]'/><button className='bg-white text-black rounded-2xl p-2'>Subscribe</button>
               </div>
                 
@@ -67,7 +67,7 @@ function Footer() {
    
 
   </footer>
-  <div  className="bg-[#20202D] h-[50px] text-white flex justify-around items-center">
+  <div  className="bg-[#20202D] md:h-[50px] text-white flex justify-around items-center flex-col md:flex-row gap-2 p-2">
 
     <div>We Connect We Chat</div>
     <div>

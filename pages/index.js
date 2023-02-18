@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import Header from './components/Header'
 import Footer from "./components/Footer"
 import Navbar from './components/Navbar'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -23,11 +24,11 @@ export default function Home() {
   </div>
 
   <div className='mt-[150px] items-center flex justify-center'>
-    <div className='flex justify-around gap-[100px]'>
+    <div className='flex justify-around gap-[100px] flex-col md:flex-row p-3 '>
       <div>
         <h3 className='text-[#ABCDFB] font-bold'>Whats Connectron?</h3>
         <h1 className='text-[#0A093D] text-2xl font-bold mb-[20px]'>Why Join to Connectron <br/>Social Network?</h1>
-        <p className="w-[500px] text-sm">Recent surveys has come to realize that businesses recognizes the need of social media platform to connect to customers</p>
+        <p className="md:w-[500px] text-sm">Recent surveys has come to realize that businesses recognizes the need of social media platform to connect to customers</p>
 
         <div className='mt-[40px] text-sm'>
           <ul className='flex flex-col gap-[10px]'>
@@ -56,16 +57,42 @@ export default function Home() {
 
 
 
-  <div className='mt-[100px] h-[300px] '>
+  <div className='mt-[100px] md:h-[300px] '>
 
-    <div className='grid grid-cols-3 gap-[30px] w-[70%] m-auto'>
-      <div className='bg-white shadow h-[300px] w-[300px] rounded-2xl border-2 border-gray-300'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-[30px] md:w-[70%] m-auto w-[80%]'>
+      <div className='bg-white h-[250px] md:w-[250px] rounded-2xl w-[300px] '>
+      <div className='flex gap-[10px] items-center mt-[20px]'>
+          <div><Image src="/Star.png" width={30} height={50} /></div>
+          <h2 className='font-bold'>4.8 Rating</h2>
+        </div>
 
+        <div className='flex gap-[10px] items-center mt-[30px]'>
+          <div><Image src="/Ellipse 14.png" width={30} height={50} /></div>
+          <h2 className='text-sm'> <span className='text-[#3D8BF5]'>300+</span> members</h2>
+        </div>
+        <div className='mt-[20px]'>
+          <p className='text-sm'>More than 2 billion we people over countries use connectron to stay in touch with friends</p>
+        </div>
+
+<div className='mt-[40px] text-[#3D8BF5] cursor-pointer text-sm'>
+  <span><Link href="signup">Join Community</Link></span>
+</div>
 
       </div>
 
-      <div className='bg-white h-[300px] w-[300px] rounded-2xl border-2 border-gray-100'>
+      <div className='bg-white h-[250px] md:w-[250px] rounded-2xl p-2 flex flex-col w-[300px] '>
+        <div className='flex gap-[10px] items-center mt-[20px]'>
+          <div><Image src="/Trophy.png" width={30} height={50} /></div>
+          <h2 className='font-bold'>Awards</h2>
+        </div>
 
+        <div className='flex gap-[10px] items-center mt-[30px]'>
+          <div><Image src="/Ellipse 14.png" width={30} height={50} /></div>
+          <h2 className='text-sm'>Best of <span className='text-[#3D8BF5]'>2021</span> 0n Github</h2>
+        </div>
+        <div className='mt-[20px]'>
+          <p className='text-sm'>More than 2 billion we people over countries use connectron to stay in touch with friends</p>
+        </div>
 
 </div>
 
@@ -90,7 +117,7 @@ export default function Home() {
 
 
 
-  <div className="mt-[100px] h-[600px] flex items-center justify-center bg-gradient-to-b from-white to-[#E1EEFE] p-3">
+  <div className="mt-[100px] md:h-[600px] flex items-center justify-center bg-gradient-to-b from-white to-[#E1EEFE] p-3">
     <div>
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-center text-[#ABCDFB] font-bold">Our Community</h2>
@@ -98,8 +125,8 @@ export default function Home() {
         <p className='text-center w-[400px] text-sm'>The wise man therefore always holds in this matters to this principle of selection</p>
       </div>
 
-      <div className=" grid grid-cols-2 mt-[60px] gap-[30px]">
-        <div className='flex bg-white w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
+      <div className=" grid grid-cols-1 md:grid-cols-2 mt-[60px] gap-[30px] p-3">
+        <div className='flex bg-white md:w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
           <Image src="/Icon (2).png" width={80} height={100}/>
           <div>
             <h2 className='font-bold text-[#0A093D] mb-[4px]'>Members,Friends</h2>
@@ -108,7 +135,7 @@ export default function Home() {
 
         </div>
 
-        <div className='flex bg-white w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
+        <div className='flex bg-white md:w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
           <Image src="/Icon (3).png" width={80} height={100}/>
           <div>
             <h2 className='font-bold text-[#0A093D] mb-[4px]'>Forum</h2>
@@ -118,7 +145,7 @@ export default function Home() {
         </div>
 
 
-        <div className='flex bg-white w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
+        <div className='flex bg-white md:w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
           <Image src="/Icon (5).png" width={80} height={100}/>
           <div>
             <h2 className='font-bold text-[#0A093D] mb-[4px]'>Groups</h2>
@@ -128,7 +155,7 @@ export default function Home() {
         </div>
 
 
-        <div className='flex bg-white w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
+        <div className='flex bg-white md:w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
           <Image src="/Icon.png" width={80} height={100}/>
           <div>
             <h2 className='font-bold text-[#0A093D] mb-[4px]'>Members,Friends</h2>
@@ -137,7 +164,7 @@ export default function Home() {
 
         </div>
 
-        <div className='flex bg-white w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
+        <div className='flex bg-white md:w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
           <Image src="/Icon (4).png" width={80} height={100}/>
           <div>
             <h2 className='font-bold text-[#0A093D] mb-[4px]'>Custom Module</h2>
@@ -146,7 +173,7 @@ export default function Home() {
 
         </div>
 
-        <div className='flex bg-white w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
+        <div className='flex bg-white md:w-[350px] shadow rounded-2xl p-3 justify-around gap-[20px] items-center'>
           <Image src="/Icon (1).png" width={80} height={100}/>
           <div>
             <h2 className='font-bold text-[#0A093D] mb-[4px]'>List Builder</h2>
@@ -166,7 +193,7 @@ export default function Home() {
 
 
 
-  <div className='mt-[100px] flex-items-center justify-center'>
+  <div className='mt-[100px] flex items-center justify-center'>
       <div>
 
         <div>
@@ -177,16 +204,47 @@ export default function Home() {
       </div>
         </div>
 
+        <div className='grid grid-cols-4 gap-[20px] mt-[30px] p-2'>
+          <div className='relative'>
+            <Image src="/Abstrack.png" width={120} height={100}/>
+            <div className='absolute top-1 left-0 z-1'>
+            <Image src="/face1.png" width={120} height={100}/>
+            </div>
+          </div>
+          <div className='relative'>
+            <Image src="/Abstrack.png" width={120} height={100}/>
+            <div className='absolute top-1 left-0 z-1'>
+            <Image src="/Image (2).png" width={120} height={100}/>
+            </div>
+          </div>
+
+          <div className='relative'>
+            <Image src="/Abstrack.png" width={120} height={100}/>
+            <div className='absolute top-1 left-0 z-1'>
+            <Image src="/face1.png" width={120} height={100}/>
+            </div>
+          </div>
+
+          <div className='relative'>
+            <Image src="/Abstrack.png" width={120} height={100}/>
+            <div className='absolute top-1 left-0 z-1'>
+            <Image src="/face1.png" width={120} height={100}/>
+            </div>
+          </div>
+
+
+        </div>
+
       </div>
   </div>
 
-  <div className='mt-[100px] h-[450px] bg-[#E5F0FD] p-3' style={{overflow:'hidden'}}>
+  <div className='mt-[100px] md:h-[450px] bg-[#E5F0FD] p-3' style={{overflow:'hidden'}}>
 
-    <div className='flex justify-around items-center'>
+    <div className='flex justify-around items-center flex-col md:flex-row'>
       <div className='flex flex-col justify-center'>
         <h2 className=" text-[#ABCDFB] font-bold">Get Our Application</h2>
         <h1 className=" text-[#0A093D] text-3xl font-bold mb-[20px]">You Can Easily Find <br/>This App...!</h1>
-        <p className="text-sm w-[400px]">I say chap that sung levatory chip song gosh off his smashing boot are you asking</p>
+        <p className="text-sm md:w-[400px]">I say chap that sung levatory chip song gosh off his smashing boot are you asking</p>
         <div className='flex items-center justify-center -ml-[160px] mt-[25px] '>
       <div> <Image src="/image 288.png" width={150} height={200}/></div> 
         <Image src="/image 289.png" width={120} height={200}/>

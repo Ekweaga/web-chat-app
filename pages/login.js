@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Link from "next/link"
 import {signInWithPopup, GoogleAuthProvider,signInWithEmailAndPassword} from 'firebase/auth'
-import {auth,db} from  "./components/Firebase/fiebase"
+import {auth,db} from  "../Firebase/fiebase"
 import {setDoc,doc,Timestamp} from 'firebase/firestore';
 import {useRouter} from "next/router"
 

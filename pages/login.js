@@ -1,7 +1,60 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Link from "next/link"
+import {signInWithPopup, GoogleAuthProvider,signInWithEmailAndPassword} from 'firebase/auth'
+import {auth,db} from  "./components/Firebase/fiebase"
+import {setDoc,doc,Timestamp} from 'firebase/firestore';
+import {useRouter} from "next/router"
 
-function login() {
+
+function Login() {
+
+    const provider = new GoogleAuthProvider();
+    const [name,setName] = useState('')
+    const [email,setEmail] = useState('')
+    const [pwd,setPwd] = useState('')
+    const [error,setError] = useState('')
+    const [success,setSuccess] = useState('')
+    const [loading,setLoading] = useState(false)
+   
+    const router = useRouter();
+
+    const  login = async (e)=>{
+        e.preventDefault();
+        //setLoading(true)
+    
+        if(email === "" || !password === "" ){
+          setError("Fields are empty")
+          //setLoading(false)
+        }
+    
+       else{
+        try{
+          await signInWithEmailAndPassword(auth,email,pwd)
+        // setLoading(false)
+         router.replace("/");
+         setSuccess("Welcome to Movella")
+         
+       }
+       catch(err){
+         console.log(err)
+         setError(err.message)
+       }
+    
+       }
+       
+       
+      
+    
+      }
+
+      const SignInWithGoogle =  async()=>{
+        await signInWithPopup(auth,provider).then((user)=>{
+          router.push("/")
+        }).catch((error)=>{
+            setError(error.message)
+            console.log(error.message)
+        })
+    }
   return (
     <>
     <div className='flex h-[100vh] gap-[200px] flex-col md:flex-row'>
@@ -28,7 +81,7 @@ function login() {
                 <div>
                     <label className='text-sm'>Password</label>
                     <div>
-                        <input type="text" placeholder='xxxxxxxxxxxxxxxxxxxxx' style={{borderBottom:'2px solid #0066FF'}} className="text-sm w-[300px] py-2 focus:outline-none px-2"/>
+                        <input type="password" placeholder='xxxxxxxxxxxxxxxxxxxxx' style={{borderBottom:'2px solid #0066FF'}} className="text-sm w-[300px] py-2 focus:outline-none px-2"/>
                     </div>
                 </div>
 
@@ -38,6 +91,10 @@ function login() {
 
                 <div>
                 <button className='bg-[#217AF5] text-white p-2 rounded-2xl w-[300px] shadow'>Login</button>
+                </div>
+
+                <div className='text-center border-2 border-black p-2 cursor-pointer' onClick={SignInWithGoogle}>
+                    SignInWithGoogle
                 </div>
             </fom>
 
@@ -53,4 +110,4 @@ function login() {
   )
 }
 
-export default login
+export default Login

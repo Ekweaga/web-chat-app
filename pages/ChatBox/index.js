@@ -7,3 +7,5 @@ function ChaxBox(){
         </>
     )
 }
+
+export default ChaxBox;
